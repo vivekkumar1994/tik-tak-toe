@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-export default function Game() {
+function GameComponent() {
   const searchParams = useSearchParams();
   const player1 = searchParams.get('player1') || 'Player 1';
   const player2 = searchParams.get('player2') || 'Player 2';
@@ -163,3 +163,5 @@ export default function Game() {
     </div>
   );
 }
+
+export default GameComponent;
