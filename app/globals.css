@@ -16,14 +16,14 @@ body {
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 90%;
   max-width: 400px;
 }
 
 /* Board */
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   margin-top: 20px;
   padding: 10px;
@@ -35,8 +35,7 @@ body {
 
 /* Cells */
 .cell {
-  width: 100px;
-  height: 100px;
+  aspect-ratio: 1 / 1;
   font-size: 2rem;
   display: flex;
   justify-content: center;
@@ -47,6 +46,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: background 0.2s, transform 0.1s;
+  animation: fadeIn 0.2s ease-out;
 }
 
 .cell:hover {
@@ -118,6 +118,22 @@ button:disabled {
   }
 }
 
-.cell {
-  animation: fadeIn 0.2s ease-out;
+/* Responsive Design */
+@media (max-width: 500px) {
+  .cell {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .cell {
+    font-size: 1.2rem;
+  }
+  button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+  .status {
+    font-size: 1.2rem;
+  }
 }
